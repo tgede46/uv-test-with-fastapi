@@ -13,24 +13,23 @@ Ce dépôt contient une petite application FastAPI (`main.py`) utilisée pour te
 
 1. Ouvrir un terminal dans le dossier du projet :
 ```bash
-cd /home/gedeonkp/Tool/ToolPy/fastApi/test-uv/python-project
+cd /home/gedeonkp/Tool/ToolPy/fastApi/test-uv
 ```
 
-2. Créer et activer un environnement virtuel (Linux / zsh) :
+2. Créer du projet uv  :
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+
+	uv init project-python
 ```
 
-3. Mettre pip à jour et installer les dépendances :
+3. :
 ```bash
-pip install --upgrade pip
-pip install "fastapi[standard]" "uvicorn[standard]"
+	uv add fastapi --extra standard
 ```
 
 4. Lancer le serveur avec `uvicorn` :
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uv run fastapi dev
 ```
 
 - Ouvrez ensuite `http://127.0.0.1:8000/` dans votre navigateur ; vous devriez voir `hello world`.
